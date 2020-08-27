@@ -1,0 +1,25 @@
+<ActionBar>
+  <Label text="Home"></Label>
+</ActionBar>
+
+<GridLayout>
+  <Label col="0" row="1" textWrap="true">
+    <FormattedString>
+      <Span [text]="result"></Span>
+    </FormattedString>
+  </Label>
+  <Button
+    *ngIf="isAppInstalled"
+    col="0"
+    row="2"
+    text="Start a {{ currency }} 1.25 transaction"
+    (tap)="onTransaction(125)"
+  ></Button>
+  <Button
+    *ngIf="!isAppInstalled"
+    col="0"
+    row="3"
+    text="Install Square POS app"
+    (tap)="onAppInstall()"
+  ></Button>
+</GridLayout>
